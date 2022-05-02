@@ -66,6 +66,7 @@ namespace Product_Management_Review_Linq
                 Console.WriteLine("4- Count of records by product id ");
                 Console.WriteLine("5- Retrieving review by Product ID:");
                 Console.WriteLine("6- Skipping top 5 records:");
+                Console.WriteLine("7- Retrieving review by Product ID:");
                 Console.WriteLine("0 to EXIT");
                     option = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("-----------------------------------------------\n");
@@ -88,6 +89,9 @@ namespace Product_Management_Review_Linq
                         break;
                     case 6:
                         management.SkipTopFiveRecords(program.ProductReviewList);
+                        break;
+                        case 7:
+                        management.SelectProductIDAndReviews(program.ProductReviewList);
                         break;
 
                     default:
