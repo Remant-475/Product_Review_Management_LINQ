@@ -88,5 +88,14 @@ namespace Product_Management_Review_Linq
                 Console.WriteLine("ID:" + list.ProductID + "=====>" + list.Review);
             }
         }
+        public void IsLikeValueIsTrue(List<ProductReview> ProductReview)
+        {
+            var RecordedData = (from productReview in ProductReview where (productReview.isLike == true) select productReview);
+            foreach (var list in RecordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.isLike);
+            }
+        }
     }
 }
