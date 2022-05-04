@@ -35,7 +35,11 @@ namespace Product_Management_Review_Linq
                 new ProductReview(){ProductID=21,UserID=1,Rating=3,Review="nice",isLike=true},
                 new ProductReview(){ProductID=22,UserID=1,Rating=10,Review="nice",isLike=true},
                 new ProductReview(){ProductID=22,UserID=1,Rating=8,Review="nice",isLike=true},
-                new ProductReview(){ProductID=25,UserID=1,Rating=3,Review="nice",isLike=true}
+               new ProductReview(){ProductID=23,UserID=10,Rating=9,Review="nice",isLike=true},
+                new ProductReview(){ProductID=23,UserID=10,Rating=7,Review="Good",isLike=true},
+               new ProductReview(){ProductID=24,UserID=10,Rating=8,Review="nice",isLike=true},
+               new ProductReview(){ProductID=24,UserID=10,Rating=9,Review="nice",isLike=true},
+                new ProductReview(){ProductID=25,UserID=10,Rating=3,Review="bad",isLike=true}
             };
         }
         public void DisplayList(List<ProductReview> ProductReviewsList)
@@ -104,6 +108,9 @@ namespace Product_Management_Review_Linq
                         break;
                     case 10:
                         management.RecordsWithNiceReview(program.ProductReviewList);
+                        break;
+                    case 11:
+                        management.GetRecordsForUserIdTen(program.ProductReviewList);
                         break;
                     default:
                             break;

@@ -115,5 +115,13 @@ namespace Product_Management_Review_Linq
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.isLike);
             }
         }
+        public void GetRecordsForUserIdTen(List<ProductReview> ProductReview)
+        {
+            var recordData = (from productReview in ProductReview where (productReview.UserID == 10) orderby productReview.Rating descending select productReview);
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("Product id = " + list.ProductID + "User id = " + list.UserID + "Rating is = " + list.Rating + " Review is = " + list.Review + " isLike = " + list.isLike);
+            }
+        }
     }
 }
