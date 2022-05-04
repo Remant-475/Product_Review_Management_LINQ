@@ -97,5 +97,14 @@ namespace Product_Management_Review_Linq
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.isLike);
             }
         }
+        public void AverageRatingEachProductID(List<ProductReview> ProductReview)
+        {
+            var recordedData = ProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductId = x.Key, Average = x.Average(y => y.Rating) });
+            Console.WriteLine("\nAverage rating of ProductId = ");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductId + "------" + list.Average);
+            }
+        }
     }
 }
